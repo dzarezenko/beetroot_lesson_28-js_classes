@@ -28,21 +28,20 @@ class EmpTable {
     this.table = document.createElement("table");
     this.table.style.border = '3px solid black';
     this.tr = document.createElement("tr");
-    this.th = document.createElement("th");
-    this.th.innerText = 'name';
-    this.tr.appendChild(this.th);
-    this.th = document.createElement("th");
-    this.th.innerText = 'experience';
-    this.tr.appendChild(this.th);
-    this.th = document.createElement("th");
-    this.th.innerText = 'sex';
-    this.tr.appendChild(this.th);
-    this.th = document.createElement("th");
-    this.th.innerText = 'age';
-    this.tr.appendChild(this.th);
-    this.th = document.createElement("th");
-    this.th.innerText = 'education';
-    this.tr.appendChild(this.th);
+
+    let tblHeaders = [
+      'name',
+      'experience',
+      'sex',
+      'age',
+      'education',
+    ];
+    for (let i = 0; i < tblHeaders.length; i++) {
+      this.th = document.createElement("th");
+      this.th.innerText = tblHeaders[i];
+      this.tr.appendChild(this.th);
+    }
+
     this.table.appendChild(this.tr);
     for (let i = 0; i < arr.length; i++) {
       this.tr = document.createElement("tr");
